@@ -12,8 +12,12 @@ class App extends React.Component {
         <div className="menu">
           <Header tagline="Best Seafood Market" />
         </div>
-        <Order />
-        <Inventory />
+        <div className="menu">
+          <Order />
+        </div>
+        <div className="menu">
+         <Inventory />
+        </div>
       </div>
     )
   }
