@@ -7,7 +7,10 @@ class StorePicker extends React.Component {
    getStore (event) {
       // stop the reloading
       event.preventDefault();
-      console.log("Get Store Clicked!: ", this.textInput.value);
+      const storeId = this.textInput.value;
+      console.log("Get Store Clicked!: ", storeId);
+      // transition to the store page 
+      this.context.router.transitionTo(`/store/${storeId}`);
       
     }
 
@@ -23,6 +26,10 @@ class StorePicker extends React.Component {
       </form>
     )
   }
+}
+
+StorePicker.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default StorePicker;
