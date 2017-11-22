@@ -7,7 +7,7 @@ class StorePicker extends React.Component {
    getStore (event) {
       // stop the reloading
       event.preventDefault();
-      console.log("Get Store Clicked!: ", this);
+      console.log("Get Store Clicked!: ", this.textInput.value);
       
     }
 
@@ -17,6 +17,7 @@ class StorePicker extends React.Component {
         <h1>Select a Store</h1>
         <input type="text" name="storeName" placeholder="enter a store name" 
         defaultValue={getFunName()}
+        ref={(input) => { this.textInput = input; }}
         required/>
         <button type="submit">Visit Store</button>
       </form>
