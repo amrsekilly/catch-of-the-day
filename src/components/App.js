@@ -4,6 +4,7 @@ import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
 import { log } from 'util';
+import SampleFishes from "../sample-fishes";
 
 
 class App extends React.Component {
@@ -13,10 +14,17 @@ class App extends React.Component {
     // to allow the use of this
     super();
     this.addFish = this.addFish.bind(this);
+    this.loadFishes = this.loadFishes.bind(this);
     // initilize state 
     this.state = {
       fishes: {}
     };
+  }
+
+  loadFishes() {
+    this.setState({
+      fishes: SampleFishes
+    });
   }
 
   addFish(fish) {
@@ -43,7 +51,7 @@ class App extends React.Component {
           <Order />
         </div>
         <div className="menu">
-         <Inventory addFish={this.addFish} />
+         <Inventory addFish={this.addFish} loadFishes={this.loadFishes} />
         </div>
       </div>
     )
