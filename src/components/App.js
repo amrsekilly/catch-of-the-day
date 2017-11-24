@@ -6,6 +6,18 @@ import Inventory from "./Inventory";
 
 
 class App extends React.Component {
+
+  // initialize the state 
+  constructor() {
+    // to allow the use of this
+    super();
+
+    // initilize state 
+    this.state = {
+      fishes: {}
+    };
+  }
+
   render() {
     return (
       <div className="catch-of-the-day">
