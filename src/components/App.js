@@ -13,6 +13,7 @@ class App extends React.Component {
     // to allow the use of this
     super();
     this.addFish = this.addFish.bind(this);
+    this.addToOrder = this.addToOrder.bind(this);
     this.loadFishes = this.loadFishes.bind(this);
     // initilize state 
     this.state = {
@@ -38,6 +39,11 @@ class App extends React.Component {
     this.setState({fishes});
     // console.log(fishes);
 
+  }
+
+  // add a fish to an order 
+  addToOrder(fish) {
+    
   }
 
   render() {
