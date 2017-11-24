@@ -50,7 +50,9 @@ class App extends React.Component {
           <ul className="list-of-fishes">
             {
               Object.keys(this.state.fishes)
-              .map(fish => <Fish />)
+              .map(fish => 
+                <Fish key={fish} />
+              )
             }
           </ul>
         </div>
