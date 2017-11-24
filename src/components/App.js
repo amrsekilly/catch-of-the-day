@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
+import { log } from 'util';
 
 
 class App extends React.Component {
@@ -22,6 +23,9 @@ class App extends React.Component {
     // spread the old fishes state into the new state, 
     // to avoid mutating the old state (for performance reasons)
     const fishes = {...this.state.fishes};
+    // create a unique identifier using a timestamp
+    const timestamp = Date.now();
+    console.log(timestamp);
   }
 
   render() {
