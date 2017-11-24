@@ -27,7 +27,9 @@ class App extends React.Component {
     const timestamp = Date.now();
     // write the new fish to the new state 
     fishes[`fish-${timestamp}`] = fish;
-    console.log(fishes);
+    // save that to the state 
+    this.setState({fishes});
+    // console.log(fishes);
 
   }
 
