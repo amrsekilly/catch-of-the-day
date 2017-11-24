@@ -25,7 +25,10 @@ class App extends React.Component {
     const fishes = {...this.state.fishes};
     // create a unique identifier using a timestamp
     const timestamp = Date.now();
-    console.log(timestamp);
+    // write the new fish to the new state 
+    fishes[`fish-${timestamp}`] = fish;
+    console.log(fishes);
+
   }
 
   render() {
