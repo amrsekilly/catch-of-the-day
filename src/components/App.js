@@ -1,10 +1,8 @@
 import React from 'react';
-import { render } from 'react-dom';
 import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
 import Fish from "./Fish";
-import { log } from 'util';
 import SampleFishes from "../sample-fishes";
 
 
