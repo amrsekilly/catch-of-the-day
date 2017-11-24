@@ -11,11 +11,17 @@ class App extends React.Component {
   constructor() {
     // to allow the use of this
     super();
-
+    this.addFish = this.addFish.bind(this);
     // initilize state 
     this.state = {
       fishes: {}
     };
+  }
+
+  addFish(fish) {
+    // spread the old fishes state into the new state, 
+    // to avoid mutating the old state (for performance reasons)
+    const fishes = {...this.state.fishes};
   }
 
   render() {
@@ -28,7 +34,7 @@ class App extends React.Component {
           <Order />
         </div>
         <div className="menu">
-         <Inventory />
+         <Inventory addFish={this.addFish} />
         </div>
       </div>
     )
