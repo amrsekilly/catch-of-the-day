@@ -49,7 +49,10 @@ class App extends React.Component {
             {
               Object.keys(this.state.fishes)
               .map(fish => 
-                <Fish key={fish} />
+                <Fish 
+                  key={fish} 
+                  details={this.state.fishes[fish]}
+                />
               )
             }
           </ul>
