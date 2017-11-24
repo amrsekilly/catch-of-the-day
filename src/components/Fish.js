@@ -3,8 +3,8 @@ import React from 'react';
 class Fish extends React.Component {
   render() {
     return (
-      <div>
-        A fish element 🐡
+      <div className="menu-fish">
+        {this.props.details.name}
       </div>
     )
   }
