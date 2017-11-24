@@ -6,9 +6,15 @@ class Fish extends React.Component {
     const {details} = this.props;
     
     return (
-      <div className="menu-fish">
-        {details.name}
-      </div>
+       <li className="menu-fish">
+        <img src={details.image} alt={details.name} />
+        <h3 className="fish-name">
+          {details.name}
+          <span className="price">{details.price}</span>
+        </h3>
+        <p>{details.desc}</p>
+        <button>Add To Order</button>
+      </li>
     )
   }
 }
