@@ -72,6 +72,7 @@ class App extends React.Component {
         <div className="menu">
           <Order 
             order={this.state.order}
+            fishes={this.state.fishes}
           />
         </div>
         <div className="menu">
