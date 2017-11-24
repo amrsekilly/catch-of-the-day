@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
+import Fish from "./Fish";
 import { log } from 'util';
 import SampleFishes from "../sample-fishes";
 
@@ -46,6 +47,9 @@ class App extends React.Component {
       <div className="catch-of-the-day">
         <div className="menu">
           <Header tagline="Best Seafood Market" />
+          <ul className="list-of-fishes">
+            <Fish />
+          </ul>
         </div>
         <div className="menu">
           <Order />
