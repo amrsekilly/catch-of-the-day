@@ -17,7 +17,8 @@ class App extends React.Component {
     this.loadFishes = this.loadFishes.bind(this);
     // initilize state 
     this.state = {
-      fishes: {}
+      fishes: {},
+      order: {}
     };
   }
 
@@ -43,7 +44,10 @@ class App extends React.Component {
 
   // add a fish to an order 
   addToOrder(fish) {
-    
+    const order = {...this.state.order};
+    // either add a new fish to the order, or increment an old one
+    order[fish] = order[fish] + 1 || 1;
+    this.setState({order});
   }
 
   render() {
@@ -57,7 +61,9 @@ class App extends React.Component {
               .map(fish => 
                 <Fish 
                   key={fish} 
+                  index={fish}
                   details={this.state.fishes[fish]}
+                  addToOrder={this.addToOrder}
                 />
               )
             }

@@ -5,7 +5,7 @@ import {formatPrice} from '../helpers';
 class Fish extends React.Component {
   render() {
     // destructure the fish details from the passed down state 
-    const {details} = this.props;
+    const {details, index} = this.props;
     
     return (
        <li className="menu-fish">
@@ -15,7 +15,7 @@ class Fish extends React.Component {
           <span className="price">{formatPrice(details.price)}</span>
         </h3>
         <p>{details.desc}</p>
-        <button>Add To Order</button>
+        <button onClick={() => this.props.addToOrder(index)}>Add To Order</button>
       </li>
     )
   }
