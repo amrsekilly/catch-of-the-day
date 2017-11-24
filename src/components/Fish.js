@@ -4,8 +4,13 @@ import {formatPrice} from '../helpers';
 
 class Fish extends React.Component {
   render() {
-    // destructure the fish details from the passed down state 
+    // destructure the fish details & the index from the passed down state 
     const {details, index} = this.props;
+    // check the availability of a fish
+    const isAvailable = details.status === 'available';
+    // show the button if it's available,
+    // otherwise show sold out
+    const buttonText = isAvailable ? 'Add To Order' : 'Sold Out!';
     
     return (
        <li className="menu-fish">
@@ -15,7 +20,11 @@ class Fish extends React.Component {
           <span className="price">{formatPrice(details.price)}</span>
         </h3>
         <p>{details.desc}</p>
-        <button onClick={() => this.props.addToOrder(index)}>Add To Order</button>
+        <button 
+          disabled={!isAvailable}
+          onClick={() => this.props.addToOrder(index)}>
+          {buttonText}
+        </button>
       </li>
     )
   }
