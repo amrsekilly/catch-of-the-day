@@ -23,6 +23,11 @@ class App extends React.Component {
     };
   }
 
+  // component will mount 
+  componentWillMount() {
+    
+  }
+
   loadFishes() {
     this.setState({
       fishes: SampleFishes
