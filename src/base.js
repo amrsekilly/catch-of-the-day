@@ -1,10 +1,11 @@
 // import the rebase package 
-const Base = require('re-base');
+import Rebase from 're-base';
 
-const base = Base.createClass({
+const base = Rebase.createClass({
   apiKey: "AIzaSyBl76TYSFzk1mqpooKGeoOSrQJvNzIcYDY",
   authDomain: "catch-of-the-day-amr.firebaseapp.com",
   databaseURL: "https://catch-of-the-day-amr.firebaseio.com",
 });
 
 export default base;
+
