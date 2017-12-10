@@ -25,7 +25,16 @@ class App extends React.Component {
 
   // component will mount 
   componentWillMount() {
-    
+    // set the state 
+    this.ref = base.syncState(`${this.props.params.storeId}/fishes`, {
+      context: this,
+      state: 'fishes'
+    });
+  }
+
+  // if the user changes the view 
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   loadFishes() {
