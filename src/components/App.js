@@ -17,6 +17,7 @@ class App extends React.Component {
     this.updateFish = this.updateFish.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
     this.loadFishes = this.loadFishes.bind(this);
+    this.removeFish = this.removeFish.bind(this);
     // initilize state 
     this.state = {
       fishes: {},
@@ -71,6 +72,16 @@ class App extends React.Component {
     this.setState({fishes});
     // console.log(fishes);
 
+  }
+
+  // to remove a fish from the state 
+  removeFish(key) {
+    // copy the state
+    const fishes = {...this.state.fishes};
+    // remove the unwanted fish
+    fishes[key] = null;
+    // set the new state
+    this.setState({ fishes });
   }
 
   updateFish(key, updatedFish) {
