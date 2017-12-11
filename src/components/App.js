@@ -36,6 +36,15 @@ class App extends React.Component {
       context: this,
       state: 'fishes'
     });
+
+    // check if there's an order saved to the local storage 
+    const savedOrder = localStorage.getItem(`order-${this.props.params.storeId}`);
+    // if there was an order saved, set the state with that order
+    if (savedOrder) {
+      this.setState({
+        order: JSON.parse(savedOrder)
+      });
+    }
   }
 
   // if the user changes the view 
