@@ -18,6 +18,7 @@ class App extends React.Component {
     this.addToOrder = this.addToOrder.bind(this);
     this.loadFishes = this.loadFishes.bind(this);
     this.removeFish = this.removeFish.bind(this);
+    this.removeFromOrder = this.removeFromOrder.bind(this);
     // initilize state 
     this.state = {
       fishes: {},
@@ -98,6 +99,16 @@ class App extends React.Component {
     this.setState({order});
   }
 
+  // to remove from the order 
+  removeFromOrder(key) {
+    // copy the order state 
+    const order = {...this.state.order};
+    // remove the unwanted item from the copied order 
+    delete order[key];
+    // update the state 
+    this.setState({order});
+  }
+
   render() {
     return (
       <div className="catch-of-the-day">
@@ -122,6 +133,7 @@ class App extends React.Component {
             order={this.state.order}
             fishes={this.state.fishes}
             params={this.props.params}
+            removeFromOrder={this.removeFromOrder}
           />
         </div>
         <div className="menu">
