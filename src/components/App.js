@@ -14,6 +14,7 @@ class App extends React.Component {
     // to allow the use of this
     super();
     this.addFish = this.addFish.bind(this);
+    this.updateFish = this.updateFish.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
     this.loadFishes = this.loadFishes.bind(this);
     // initilize state 
@@ -72,6 +73,12 @@ class App extends React.Component {
 
   }
 
+  updateFish(key, updatedFish) {
+    const fishes = { ...this.state.fishes };
+    fishes[key] = updatedFish;
+    this.setState({ fishes });
+  }
+
   // add a fish to an order 
   addToOrder(fish) {
     const order = {...this.state.order};
@@ -109,6 +116,7 @@ class App extends React.Component {
         <div className="menu">
          <Inventory 
           addFish={this.addFish} 
+          updateFish={this.updateFish}
           loadFishes={this.loadFishes} 
           fishes={this.state.fishes}
           />
