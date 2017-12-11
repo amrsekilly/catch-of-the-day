@@ -25,7 +25,8 @@ class App extends React.Component {
 
   // when the state changes 
   componentWillUpdate(nextProps, nextState) {
-
+    // save the order state to the local storage 
+    localStorage.setItem(`order-${this.props.params.storeId}`, JSON.stringify(nextState.order));
   }
 
   // component will mount 
