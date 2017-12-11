@@ -23,6 +23,11 @@ class App extends React.Component {
     };
   }
 
+  // when the state changes 
+  componentWillUpdate(nextProps, nextState) {
+
+  }
+
   // component will mount 
   componentWillMount() {
     // set the state 
@@ -88,6 +93,7 @@ class App extends React.Component {
           <Order 
             order={this.state.order}
             fishes={this.state.fishes}
+            params={this.props.params}
           />
         </div>
         <div className="menu">
