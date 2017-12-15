@@ -15,7 +15,7 @@ class Order extends React.Component {
 
   // render an item in the order 
   renderOrder(key) {
-    // get the fish 
+    // get the fish
     const fish = this.props.fishes[key];
     // get the number of selected items of the fish
     const count = this.props.order[key];
@@ -30,7 +30,7 @@ class Order extends React.Component {
     return (
       <li key={key}>
         <span>
-        
+
           <CSSTransitionGroup
             component="span"
             className="count"
