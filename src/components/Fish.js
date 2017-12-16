@@ -1,5 +1,5 @@
 import React from 'react';
-// destructure the formatPrice from the hepers file
+// destructure the formatPrice from the helpers file
 import {formatPrice} from '../helpers';
 
 class Fish extends React.Component {
